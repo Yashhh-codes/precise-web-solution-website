@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Precise Web Solutions | Precision-Engineered Growth</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+
+  <!-- Header / Navbar -->
+  <nav
+    class="fixed w-full z-50 top-0 transition-all duration-300 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm"
+    id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div
+        class="text-xl font-black tracking-tighter text-zinc-900 dark:text-zinc-50 uppercase font-headline cursor-pointer hover:text-primary transition-colors"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        Precise Web Solutions
+      </div>
+      <div class="hidden md:flex items-center gap-8">
+        <a class="text-zinc-600 dark:text-zinc-400 font-label text-sm uppercase tracking-widest hover:text-primary transition-colors cursor-pointer"
+          onclick="document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})">Services</a>
+        <a class="text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest cursor-pointer"
+          onclick="document.getElementById('tech')?.scrollIntoView({behavior: 'smooth'})">Tech</a>
+        <a class="text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest cursor-pointer"
+          onclick="document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})">Projects</a>
+        <a class="text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest cursor-pointer"
+          onclick="document.getElementById('process')?.scrollIntoView({behavior: 'smooth'})">Process</a>
+      </div>
+      <button onclick="document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})"
+        class="bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-sm font-label font-bold text-xs uppercase tracking-[0.15em] transition-all hover:scale-105 active:scale-95 shadow-md hover:shadow-primary/30 cursor-pointer">
+        Get Started
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero-section"
+    class="relative min-h-[700px] min-h-screen flex items-center pt-24 overflow-hidden bg-surface">
+
+    <!-- Video Background Layer -->
+    <video autoplay muted loop playsinline
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.15] z-0">
+      <source src="/Blueprint_To_Website_Animation.mp4" type="video/mp4">
+    </video>
+
+    <!-- Interactive Floating Icons Container -->
+    <div id="hero-floating-icons" class="absolute inset-0 w-full h-full overflow-hidden z-[20] pointer-events-none">
+      <!-- Python -->
+      <div class="interactive-icon-wrapper" style="top: 15%; left: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: 0s; animation-duration: 6s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="Python">
+        </div>
+      </div>
+      <!-- React -->
+      <div class="interactive-icon-wrapper" style="top: 15%; right: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: -1s; animation-duration: 8s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="React">
+        </div>
+      </div>
+      <!-- Tailwind CSS (Moved further Left) -->
+      <div class="interactive-icon-wrapper hidden lg:block" style="top: 35%; left: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: -2.5s; animation-duration: 7.5s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="Tailwind CSS">
+        </div>
+      </div>
+      <!-- Java (Moved further Right) -->
+      <div class="interactive-icon-wrapper hidden md:block" style="top: 35%; right: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: -3s; animation-duration: 7s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="Java">
+        </div>
+      </div>
+      <!-- Figma (Right Side Middle) -->
+      <div class="interactive-icon-wrapper hidden lg:block" style="top: 55%; right: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: -1.5s; animation-duration: 8s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="Figma">
+        </div>
+      </div>
+      <!-- Node.js (Moved further Left) -->
+      <div class="interactive-icon-wrapper hidden md:block" style="top: 55%; left: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: -2s; animation-duration: 9s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="Node.js">
+        </div>
+      </div>
+      <!-- TypeScript -->
+      <div class="interactive-icon-wrapper" style="top: 75%; left: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: -4s; animation-duration: 5s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="TypeScript">
+        </div>
+      </div>
+      <!-- Docker (Right Side Bottom) -->
+      <div class="interactive-icon-wrapper" style="top: 75%; right: 8%;">
+        <div class="interactive-icon-inner w-16 h-16 md:w-20 md:h-20"
+          style="animation-delay: -0.5s; animation-duration: 6.5s;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+            class="w-8 h-8 md:w-10 md:h-10 object-contain drop-shadow-sm" alt="Docker">
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-5xl mx-auto px-8 w-full flex flex-col items-center text-center reveal z-[20]">
+      <div class="z-10 flex flex-col items-center">
+        <span
+          class="inline-block font-label text-primary font-bold text-sm tracking-[0.3em] uppercase mb-6 drop-shadow-sm">High-Performance
+          Engineering</span>
+        <h1
+          class="font-headline text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9] text-on-surface mb-8">
+          Precision-Engineered <span
+            class="text-primary relative inline-block after:content-[''] after:absolute after:w-full after:h-2 after:bg-primary/20 after:bottom-1 after:left-0 after:-z-10">Websites</span>
+          for High-Growth Businesses
+        </h1>
+        <p class="font-body text-xl text-secondary max-w-2xl mx-auto mb-10 leading-relaxed reveal reveal-delay-200">
+          We strip away the fluff to build aggressive digital infrastructure designed for surgical precision and
+          exponential scale.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 reveal reveal-delay-400">
+          <a href="#direct-contact"
+            class="bg-primary bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-sm font-label font-bold text-sm uppercase tracking-widest shadow-xl shadow-primary/20 hover:-translate-y-1 hover:shadow-primary/40 active:translate-y-0 transition-all duration-300 text-center">
+            Schedule a Consultation
+          </a>
+          <button
+            class="border gap-2 border-outline-variant/30 text-on-surface px-10 py-5 rounded-sm font-label font-bold text-sm uppercase tracking-widest hover:bg-surface-container-highest hover:-translate-y-1 transition-all duration-300 group">
+            View Portfolio <span
+              class="material-symbols-outlined align-middle group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Decorative elements -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none">
+    </div>
+  </section>
+
+  <!-- What We Build (Bento Grid) -->
+  <section id="services" class="py-32 bg-surface-container-low">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-20 reveal">
+        <span class="font-label text-primary font-bold text-sm tracking-[0.3em] uppercase block mb-4">Our
+          Capabilities</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tight text-on-surface">What We Build</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Custom Web Design -->
+        <div class="service-card group glass-card p-0 rounded-2xl relative overflow-hidden reveal">
+          <div class="card-image-container rounded-t-2xl">
+            <img src="/web-design.png" class="card-image" alt="Custom Web Design">
+          </div>
+          <div class="px-10 pb-10 relative z-10">
+            <div
+              class="w-14 h-14 bg-primary/10 flex items-center justify-center mb-6 rounded-xl text-primary group-hover:scale-110 transition-transform duration-500">
+              <span class="material-symbols-outlined text-3xl">architecture</span>
+            </div>
+            <h3 class="font-headline text-2xl font-bold mb-4">Custom Web Design</h3>
+            <p class="text-secondary leading-relaxed mb-6">Architecting bespoke digital experiences that align perfectly
+              with your technical DNA and brand ethos.</p>
+            <ul class="space-y-3 font-label text-xs uppercase tracking-wider text-on-surface/60">
+              <li class="flex items-center gap-2 group-hover:text-primary transition-colors"><span
+                  class="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform"></span> UI/UX
+                Engineering</li>
+              <li class="flex items-center gap-2 group-hover:text-primary transition-colors"><span
+                  class="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform"></span>
+                Interaction Design</li>
+            </ul>
+          </div>
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors duration-500">
+          </div>
+        </div>
+        <!-- AI Automations -->
+        <div class="service-card group glass-card p-0 rounded-2xl relative overflow-hidden reveal reveal-delay-200">
+          <div class="card-image-container rounded-t-2xl">
+            <img src="/ai-automations.png" class="card-image" alt="AI Automations">
+          </div>
+          <div class="px-10 pb-10 relative z-10">
+            <div
+              class="w-14 h-14 bg-primary/10 flex items-center justify-center mb-6 rounded-xl text-primary group-hover:scale-110 transition-transform duration-500">
+              <span class="material-symbols-outlined text-3xl">robot_2</span>
+            </div>
+            <h3 class="font-headline text-2xl font-bold mb-4">AI Automations</h3>
+            <p class="text-secondary leading-relaxed mb-6">Injecting intelligence into your workflow with custom AI
+              agents and automated data pipelines.</p>
+            <ul class="space-y-3 font-label text-xs uppercase tracking-wider text-on-surface/60">
+              <li class="flex items-center gap-2 group-hover:text-primary transition-colors"><span
+                  class="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform"></span>
+                Workflow Optimization</li>
+              <li class="flex items-center gap-2 group-hover:text-primary transition-colors"><span
+                  class="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform"></span> Custom
+                LLM Integration</li>
+            </ul>
+          </div>
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors duration-500">
+          </div>
+        </div>
+        <!-- Growth SEO -->
+        <div class="service-card group glass-card p-0 rounded-2xl relative overflow-hidden reveal reveal-delay-400">
+          <div class="card-image-container rounded-t-2xl">
+            <img src="/growth-seo.png" class="card-image" alt="Growth SEO">
+          </div>
+          <div class="px-10 pb-10 relative z-10">
+            <div
+              class="w-14 h-14 bg-primary/10 flex items-center justify-center mb-6 rounded-xl text-primary group-hover:scale-110 transition-transform duration-500">
+              <span class="material-symbols-outlined text-3xl">monitoring</span>
+            </div>
+            <h3 class="font-headline text-2xl font-bold mb-4">Growth SEO</h3>
+            <p class="text-secondary leading-relaxed mb-6">Data-driven search dominance. We engineer visibility using
+              clinical technical SEO and content strategy.</p>
+            <ul class="space-y-3 font-label text-xs uppercase tracking-wider text-on-surface/60">
+              <li class="flex items-center gap-2 group-hover:text-primary transition-colors"><span
+                  class="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform"></span>
+                Semantic Optimization</li>
+              <li class="flex items-center gap-2 group-hover:text-primary transition-colors"><span
+                  class="w-1.5 h-1.5 bg-primary rounded-full group-hover:scale-150 transition-transform"></span>
+                Performance Indexing</li>
+            </ul>
+          </div>
+          <div
+            class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-16 -mt-16 group-hover:bg-primary/10 transition-colors duration-500">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Tech Stack Section -->
+  <section id="tech" class="py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-20 text-center reveal">
+        <span class="font-label text-primary font-bold text-sm tracking-[0.3em] uppercase block mb-4">Engineering
+          Arsenal</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tight text-on-surface">The Tech Stack</h2>
+      </div>
+      <div class="mt-12 overflow-hidden relative pb-8 pause-on-hover px-4">
+
+        <!-- Marquee Row 1 (Frontend & Tools) - Scroll Left -->
+        <div class="flex gap-10 whitespace-nowrap animate-scroll-left w-max">
+          <!-- Set 1 -->
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="React">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Vue">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Tailwind">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="TypeScript">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="HTML5">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="CSS3">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Figma">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Vite">
+          </div>
+          <!-- Set 2 (Duplicate for Seamless Loop) -->
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="React">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Vue">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Tailwind">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="TypeScript">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="HTML5">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="CSS3">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Figma">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Vite">
+          </div>
+        </div>
+
+        <!-- Marquee Row 2 (Backend & Infra) - Scroll Right -->
+        <div class="flex gap-10 whitespace-nowrap mt-10 animate-scroll-right w-max ml-[-200px]">
+          <!-- Set 1 -->
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Node.js">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Python">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Go">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Rust">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Java">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="PostgreSQL">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Docker">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="AWS">
+          </div>
+          <!-- Set 2 (Duplicate for Seamless Loop) -->
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Node.js">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Python">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Go">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Rust">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Java">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="PostgreSQL">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="Docker">
+          </div>
+          <div
+            class="group h-20 w-20 flex-shrink-0 rounded-full bg-surface-container-lowest shadow-lg shadow-zinc-200/50 flex items-center justify-center border border-outline-variant/20 hover:scale-110 hover:bg-primary/5 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(255,59,59,0.2)] transition-all duration-500 cursor-pointer">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+              class="h-11 w-11 object-contain group-hover:drop-shadow-[0_0_12px_rgba(255,59,59,0.8)] transition-all duration-300"
+              alt="AWS">
+          </div>
+        </div>
+
+        <!-- Fade overlays mapping the background surface color -->
+        <div
+          class="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-surface to-transparent pointer-events-none z-10">
+        </div>
+        <div
+          class="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-surface to-transparent pointer-events-none z-10">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Projects Section -->
+  <section id="projects" class="py-32 bg-surface-container-low border-y border-outline-variant/10">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-20 text-center reveal">
+        <span class="font-label text-primary font-bold text-sm tracking-[0.3em] uppercase block mb-4">Our Work</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tight text-on-surface">Featured Projects</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <a href="https://punelawyer.com/" target="_blank" class="group block cursor-pointer reveal">
+          <div
+            class="bg-surface-container aspect-[4/3] rounded-sm overflow-hidden hover-scale-img mb-6 relative ring-1 ring-inset ring-outline-variant/20">
+            <img src="/punelawyer-card.png"
+              alt="PuneLawyer.com Landing Page Mockup" class="w-full h-full object-cover">
+            <div
+              class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 mix-blend-multiply transition-colors duration-500">
+            </div>
+          </div>
+          <div class="flex gap-2 mb-4">
+            <span
+              class="px-3 py-1 bg-primary/10 text-primary font-label text-[10px] uppercase tracking-widest font-bold rounded-sm">Legal
+              Tech</span>
+            <span
+              class="px-3 py-1 bg-surface-container text-secondary font-label text-[10px] uppercase tracking-widest font-bold rounded-sm">Web
+              Portal</span>
+          </div>
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="font-headline text-2xl font-black group-hover:text-primary transition-colors">PuneLawyer.com
+              Platform</h3>
+            <div class="glass-button-strong px-4 py-1.5 rounded-full text-[9px] uppercase tracking-[0.2em] font-bold text-on-surface flex-shrink-0 group-hover:bg-primary group-hover:text-on-primary group-hover:border-transparent transition-all duration-300">View</div>
+          </div>
+          <p class="text-secondary mt-2 text-sm">Pune's premier property law firm providing title search, due diligence,
+            and high-performance real estate legal tooling.</p>
+        </a>
+        <!-- Project 2 -->
+        <a href="https://pccoer-hall-booking.vercel.app" target="_blank"
+          class="group block cursor-pointer reveal reveal-delay-200">
+          <div
+            class="bg-surface-container aspect-[4/3] rounded-sm overflow-hidden hover-scale-img mb-6 relative ring-1 ring-inset ring-outline-variant/20">
+            <img src="/pccoer-card.png"
+              alt="PCCOER Hall Booking System screenshot" class="w-full h-full object-cover">
+            <div
+              class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 mix-blend-multiply transition-colors duration-500">
+            </div>
+          </div>
+          <div class="flex gap-2 mb-4">
+            <span
+              class="px-3 py-1 bg-primary/10 text-primary font-label text-[10px] uppercase tracking-widest font-bold rounded-sm">Facility
+              Mgmt</span>
+            <span
+              class="px-3 py-1 bg-surface-container text-secondary font-label text-[10px] uppercase tracking-widest font-bold rounded-sm">Scheduling</span>
+          </div>
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="font-headline text-2xl font-black group-hover:text-primary transition-colors">PCCOER Hall Booking
+            </h3>
+            <div class="glass-button-strong px-4 py-1.5 rounded-full text-[9px] uppercase tracking-[0.2em] font-bold text-on-surface flex-shrink-0 group-hover:bg-primary group-hover:text-on-primary group-hover:border-transparent transition-all duration-300">View</div>
+          </div>
+          <p class="text-secondary mt-2 text-sm">A streamlined facility management web application engineered for
+            automated scheduling and resource reservations.</p>
+        </a>
+        <!-- Project 3 -->
+        <a href="https://cliniciandashboard.netlify.app/" target="_blank"
+          class="group block cursor-pointer reveal reveal-delay-400">
+          <div
+            class="bg-surface-container aspect-[4/3] rounded-sm overflow-hidden hover-scale-img mb-6 relative ring-1 ring-inset ring-outline-variant/20">
+            <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=1476"
+              alt="Data analytics dashboard" class="w-full h-full object-cover">
+            <div
+              class="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 mix-blend-multiply transition-colors duration-500">
+            </div>
+          </div>
+          <div class="flex gap-2 mb-4">
+            <span
+              class="px-3 py-1 bg-primary/10 text-primary font-label text-[10px] uppercase tracking-widest font-bold rounded-sm">Health
+              Tech</span>
+            <span
+              class="px-3 py-1 bg-surface-container text-secondary font-label text-[10px] uppercase tracking-widest font-bold rounded-sm">Analytics
+              UI</span>
+          </div>
+          <div class="flex items-center justify-between gap-4">
+            <h3 class="font-headline text-2xl font-black group-hover:text-primary transition-colors">CycleAnalytics
+              Dashboard</h3>
+            <div class="glass-button-strong px-4 py-1.5 rounded-full text-[9px] uppercase tracking-[0.2em] font-bold text-on-surface flex-shrink-0 group-hover:bg-primary group-hover:text-on-primary group-hover:border-transparent transition-all duration-300">View</div>
+          </div>
+          <p class="text-secondary mt-2 text-sm">A high-density clinical analytics interface built for precision
+            decision-making and pattern recognition.</p>
+        </a>
+      </div>
+      <div class="mt-20 flex justify-center reveal">
+        <a href="https://drive.google.com/drive/folders/1vxnlKQzuJtgL2UoE2LbTz0ZVBoRaOQcj?usp=drive_link"
+          target="_blank"
+          class="inline-flex items-center gap-2 bg-primary bg-gradient-to-br from-primary to-primary-container text-on-primary px-10 py-5 rounded-sm font-label font-bold text-sm uppercase tracking-widest shadow-xl shadow-primary/20 hover:scale-[1.02] hover:-translate-y-1 hover:shadow-primary/40 active:scale-95 transition-all duration-300 group">
+          View Work <span
+            class="material-symbols-outlined align-middle group-hover:translate-x-1 transition-transform">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonials -->
+  <section id="testimonials" class="py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="mb-20 text-center reveal">
+        <span class="font-label text-primary font-bold text-sm tracking-[0.3em] uppercase block mb-4">Engineering
+          Proof</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tight text-on-surface">Client Testimonials
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div
+          class="glass-card parallax-card p-10 rounded-2xl border border-outline-variant/10 reveal cursor-default group hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <div class="flex items-center gap-1 text-primary mb-6">
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+          </div>
+          <p class="font-body text-secondary italic mb-8 leading-relaxed">"Precise Web Solutions engineered a legal
+            infrastructure for PuneLawyer.com that handles our title search volume with clinical efficiency.
+            Dominant growth followed immediately."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">gavel</span>
+            </div>
+            <div>
+              <div class="font-headline font-bold text-on-surface">Adv. Amit Darekar</div>
+              <div class="font-label text-[10px] uppercase tracking-widest text-secondary text-primary/80 font-bold">
+                Senior Partner, PuneLawyer.com</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div
+          class="glass-card parallax-card p-10 rounded-2xl border border-outline-variant/10 reveal reveal-delay-200 cursor-default group hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <div class="flex items-center gap-1 text-primary mb-6">
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+          </div>
+          <p class="font-body text-secondary italic mb-8 leading-relaxed">"The automated scheduling system for PCCOER
+            Hall Booking transformed our facility management. Latency is gone, replaced by scalable, high-speed
+            performance."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">school</span>
+            </div>
+            <div>
+              <div class="font-headline font-bold text-on-surface">Dr. Harish Tiwari</div>
+              <div class="font-label text-[10px] uppercase tracking-widest text-secondary text-primary/80 font-bold">
+                Principal, PCCOER Campus</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div
+          class="glass-card parallax-card p-10 rounded-2xl border border-outline-variant/10 reveal reveal-delay-400 cursor-default group hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <div class="flex items-center gap-1 text-primary mb-6">
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1">star</span>
+          </div>
+          <p class="font-body text-secondary italic mb-8 leading-relaxed">"A masterclass in healthcare UI for
+            CycleAnalytics. The dashboard's data density and speed provide us with surgical precision in clinical
+            decision-making."</p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">analytics</span>
+            </div>
+            <div>
+              <div class="font-headline font-bold text-on-surface">Vikram Singh</div>
+              <div class="font-label text-[10px] uppercase tracking-widest text-secondary text-primary/80 font-bold">
+                Lead Architect, Healthcare Systems</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Process (Pinned Scroll Animation) -->
+  <section id="process" class="relative bg-surface-container-low border-t border-outline-variant/10">
+    <!-- Scroll Track (Length of the animation) -->
+    <div class="scroll-track h-[300vh] relative">
+      <!-- Sticky Content Wrapper -->
+      <div class="sticky-content sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 w-full">
+          <div class="mb-16 text-center reveal">
+            <span class="font-label text-primary font-bold text-sm tracking-[0.3em] uppercase block mb-4">The
+              Methodology</span>
+            <h2 class="font-headline text-4xl md:text-6xl font-black tracking-tight text-on-surface">Engineered for
+              Success</h2>
+          </div>
+
+          <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-12">
+            <!-- Step 1 -->
+            <div id="method-step-1" class="method-card relative group opacity-20 transition-all duration-700 scale-95"
+              data-method-step="1">
+              <div class="flex items-center gap-4 mb-6">
+                <span
+                  class="step-num text-5xl font-black text-primary/10 font-headline transition-all duration-500">01</span>
+                <div class="h-px flex-grow bg-outline-variant/30 transition-colors"></div>
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tighter text-on-surface">Audit</h3>
+              <p class="text-secondary text-sm leading-relaxed">Surgical analysis of your current digital infrastructure
+                and growth bottlenecks.</p>
+            </div>
+            <!-- Step 2 -->
+            <div id="method-step-2" class="method-card relative group opacity-20 transition-all duration-700 scale-95"
+              data-method-step="2">
+              <div class="flex items-center gap-4 mb-6">
+                <span
+                  class="step-num text-5xl font-black text-primary/10 font-headline transition-all duration-500">02</span>
+                <div class="h-px flex-grow bg-outline-variant/30 transition-colors"></div>
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tighter text-on-surface">Design</h3>
+              <p class="text-secondary text-sm leading-relaxed">Iterative, high-fidelity UI/UX engineering focused on
+                conversion psychology.</p>
+            </div>
+            <!-- Step 3 -->
+            <div id="method-step-3" class="method-card relative group opacity-20 transition-all duration-700 scale-95"
+              data-method-step="3">
+              <div class="flex items-center gap-4 mb-6">
+                <span
+                  class="step-num text-5xl font-black text-primary/10 font-headline transition-all duration-500">03</span>
+                <div class="h-px flex-grow bg-outline-variant/30 transition-colors"></div>
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tighter text-on-surface">Develop</h3>
+              <p class="text-secondary text-sm leading-relaxed">Writing clean, scalable code that prioritizes speed and
+                technical resilience.</p>
+            </div>
+            <!-- Step 4 -->
+            <div id="method-step-4" class="method-card relative group opacity-20 transition-all duration-700 scale-95"
+              data-method-step="4">
+              <div class="flex items-center gap-4 mb-6">
+                <span
+                  class="step-num text-5xl font-black text-primary/10 font-headline transition-all duration-500">04</span>
+                <div class="h-px flex-grow bg-outline-variant/30 transition-colors"></div>
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tighter text-on-surface">Deploy</h3>
+              <p class="text-secondary text-sm leading-relaxed">Seamless migration and launch with zero downtime and
+                optimized server specs.</p>
+            </div>
+            <!-- Step 5 -->
+            <div id="method-step-5" class="method-card relative group opacity-20 transition-all duration-700 scale-95"
+              data-method-step="5">
+              <div class="flex items-center gap-4 mb-6">
+                <span
+                  class="step-num text-5xl font-black text-primary/10 font-headline transition-all duration-500">05</span>
+                <div class="h-px flex-grow bg-outline-variant/30 transition-colors"></div>
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tighter text-on-surface">Grow</h3>
+              <p class="text-secondary text-sm leading-relaxed">Continuous SEO and performance tuning to ensure
+                aggressive market capture.</p>
+            </div>
+            <!-- Step 6 -->
+            <div id="method-step-6" class="method-card relative group opacity-20 transition-all duration-700 scale-95"
+              data-method-step="6">
+              <div class="flex items-center gap-4 mb-6">
+                <span
+                  class="step-num text-5xl font-black text-primary/10 font-headline transition-all duration-500">06</span>
+                <div class="h-px flex-grow bg-outline-variant/30 transition-colors"></div>
+              </div>
+              <h3 class="font-headline text-xl font-bold mb-4 uppercase tracking-tighter text-on-surface">Scale</h3>
+              <p class="text-secondary text-sm leading-relaxed">Expanding functionality as your business demands new
+                heights of complexity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Contact Section -->
+  <section id="direct-contact" class="py-24 bg-surface-container relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-8 relative z-10">
+      <div class="text-center mb-16 reveal">
+        <span class="font-label text-primary font-bold text-sm tracking-[0.3em] uppercase block mb-4">Direct
+          Access</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-black tracking-tight text-on-surface mb-6">Let's Build the
+          Future</h2>
+        <p class="text-secondary max-w-2xl mx-auto text-lg">Choose your preferred channel for high-priority engineering
+          consultations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <!-- Phone Card -->
+        <div class="service-card glass-card p-10 rounded-2xl flex flex-col items-center text-center group reveal">
+          <div
+            class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl text-primary group-hover:scale-110 transition-transform duration-500 mb-6">
+            <span class="material-symbols-outlined text-4xl">call</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl mb-3 text-on-surface">Voice Consultation</h3>
+          <p class="text-secondary text-sm mb-8">Priority line for urgent architectural discussions.</p>
+          <a href="tel:9699355018"
+            class="w-full py-4 bg-primary/10 border border-primary/20 text-primary font-label font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-300">
+            Dial Now
+          </a>
+        </div>
+
+        <!-- Gmail Card -->
+        <div
+          class="service-card glass-card p-10 rounded-2xl flex flex-col items-center text-center group reveal reveal-delay-200">
+          <div
+            class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl text-primary group-hover:scale-110 transition-transform duration-500 mb-6">
+            <span class="material-symbols-outlined text-4xl">alternate_email</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl mb-3 text-on-surface">Email Correspondence</h3>
+          <p class="text-secondary text-sm mb-8">Formal project proposals and data analysis.</p>
+          <a href="mailto:yashparit71@gmail.com"
+            class="w-full py-4 bg-primary/10 border border-primary/20 text-primary font-label font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-300">
+            Send Message
+          </a>
+        </div>
+
+        <!-- WhatsApp Card -->
+        <div
+          class="service-card glass-card p-10 rounded-2xl flex flex-col items-center text-center group reveal reveal-delay-400">
+          <div
+            class="w-16 h-16 bg-primary/10 flex items-center justify-center rounded-xl text-primary group-hover:scale-110 transition-transform duration-500 mb-6">
+            <span class="material-symbols-outlined text-4xl">chat</span>
+          </div>
+          <h3 class="font-headline font-bold text-xl mb-3 text-on-surface">Instant Messaging</h3>
+          <p class="text-secondary text-sm mb-8">Real-time engineering feedback and updates.</p>
+          <a href="https://wa.me/919699355018" target="_blank"
+            class="w-full py-4 bg-primary/10 border border-primary/20 text-primary font-label font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-primary hover:text-on-primary transition-all duration-300">
+            WhatsApp Now
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Background Texture -->
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/2 rounded-full blur-[120px] -z-0 pointer-events-none">
+    </div>
+  </section>
+
+  <footer id="contact" class="bg-surface-container-low border-t border-outline-variant/10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-24 max-w-7xl mx-auto">
+      <div class="col-span-1 md:col-span-1 reveal">
+        <div class="text-lg font-black text-zinc-900 dark:text-zinc-50 font-headline uppercase mb-6">
+          Precise Web Solutions
+        </div>
+        <p class="text-zinc-500 text-sm leading-relaxed max-w-xs">
+          Engineering dominant digital products for teams who prioritize performance over pretense.
+        </p>
+      </div>
+      <div class="reveal reveal-delay-100">
+        <h4 class="font-label font-bold text-xs uppercase tracking-widest text-zinc-900 dark:text-zinc-50 mb-6">Services
+        </h4>
+        <ul class="space-y-4 font-body text-sm">
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block" href="#">Web
+              Engineering</a></li>
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block" href="#">AI
+              Systems</a></li>
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block" href="#">Growth
+              Infrastructure</a></li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-200">
+        <h4 class="font-label font-bold text-xs uppercase tracking-widest text-zinc-900 dark:text-zinc-50 mb-6">Company
+        </h4>
+        <ul class="space-y-4 font-body text-sm">
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block" href="#">About</a>
+          </li>
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block"
+              href="#">Projects</a></li>
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block" href="#">Privacy
+              Policy</a></li>
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block" href="#">Terms of
+              Service</a></li>
+        </ul>
+      </div>
+      <div class="reveal reveal-delay-300">
+        <h4 class="font-label font-bold text-xs uppercase tracking-widest text-zinc-900 dark:text-zinc-50 mb-6">Connect
+        </h4>
+        <ul class="space-y-4 font-body text-sm">
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block"
+              href="#direct-contact">Contact Us</a></li>
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block"
+              href="#">LinkedIn</a></li>
+          <li><a class="text-zinc-500 hover:text-red-700 transition-colors hover:pl-1 inline-block" href="#">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-12 pb-12 reveal reveal-delay-400">
+      <div class="border-t border-zinc-200 dark:border-zinc-800 pt-8 flex flex-col md:flex-row justify-between gap-4">
+        <span class="text-zinc-500 text-xs font-label uppercase tracking-widest">© 2024 Precise Web Solutions.
+          Engineered for Growth.</span>
+        <span class="text-zinc-400 text-[10px] font-label uppercase tracking-[0.2em]">Clinical Precision. Aggressive
+          Scale.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
