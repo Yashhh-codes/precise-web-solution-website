@@ -34,12 +34,35 @@
         <a class="text-zinc-600 dark:text-zinc-400 hover:text-primary transition-colors font-label text-sm uppercase tracking-widest cursor-pointer"
           onclick="document.getElementById('process')?.scrollIntoView({behavior: 'smooth'})">Process</a>
       </div>
-      <button onclick="document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})"
-        class="bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-sm font-label font-bold text-xs uppercase tracking-[0.15em] transition-all hover:scale-105 active:scale-95 shadow-md hover:shadow-primary/30 cursor-pointer">
-        Get Started
-      </button>
+      <div class="flex items-center gap-4">
+        <button onclick="document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})"
+          class="hidden sm:block bg-primary hover:bg-primary-container text-on-primary px-6 py-2.5 rounded-sm font-label font-bold text-xs uppercase tracking-[0.15em] transition-all hover:scale-105 active:scale-95 shadow-md hover:shadow-primary/30 cursor-pointer">
+          Get Started
+        </button>
+        <!-- Mobile Toggle -->
+        <button id="mobile-menu-toggle" class="md:hidden text-on-surface p-2 cursor-pointer relative z-[110]">
+          <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+      </div>
     </div>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="mobile-menu-overlay">
+    <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface p-2 cursor-pointer">
+      <span class="material-symbols-outlined text-4xl">close</span>
+    </button>
+    <nav class="flex flex-col items-center gap-6">
+      <a class="mobile-menu-link" onclick="toggleMobileMenu(); document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})">Services</a>
+      <a class="mobile-menu-link" onclick="toggleMobileMenu(); document.getElementById('tech')?.scrollIntoView({behavior: 'smooth'})">Tech</a>
+      <a class="mobile-menu-link" onclick="toggleMobileMenu(); document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})">Projects</a>
+      <a class="mobile-menu-link" onclick="toggleMobileMenu(); document.getElementById('process')?.scrollIntoView({behavior: 'smooth'})">Process</a>
+      <button onclick="toggleMobileMenu(); document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})"
+        class="mt-8 bg-primary text-on-primary px-10 py-4 rounded-sm font-label font-bold text-lg uppercase tracking-widest shadow-2xl shadow-primary/20">
+        Get Started
+      </button>
+    </nav>
+  </div>
 
   <!-- Hero Section -->
   <section id="hero-section"

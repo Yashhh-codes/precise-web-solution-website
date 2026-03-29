@@ -25,6 +25,25 @@ document.addEventListener("DOMContentLoaded", () => {
         revealOnScroll.observe(element);
     });
 
+    // --- Mobile Menu Toggle Logic ---
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenuClose = document.getElementById("mobile-menu-close");
+
+    const toggleMobileMenu = () => {
+        mobileMenu.classList.toggle("active");
+        if (mobileMenu.classList.contains("active")) {
+            document.body.style.overflow = "hidden"; // Prevent background scroll
+        } else {
+            document.body.style.overflow = "";
+        }
+    };
+
+    window.toggleMobileMenu = toggleMobileMenu; // Global for inline onclick
+    mobileMenuToggle?.addEventListener("click", toggleMobileMenu);
+    mobileMenuClose?.addEventListener("click", toggleMobileMenu);
+
+
     // --- Floating Icons Repulsion Logic ---
     const heroSection = document.getElementById("hero-section");
     const icons = document.querySelectorAll(".interactive-icon-wrapper");
@@ -40,42 +59,43 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 300);
 
     if (heroSection && icons.length > 0) {
-        heroSection.addEventListener("mousemove", (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-
+        const handleIconRepulsion = (clientX, clientY) => {
             icons.forEach(icon => {
                 const rect = icon.getBoundingClientRect();
                 const iconCenterX = rect.left + rect.width / 2;
                 const iconCenterY = rect.top + rect.height / 2;
 
-                // Calculate Euclidean distance from mouse to icon center
                 const distance = Math.sqrt(
-                    Math.pow(mouseX - iconCenterX, 2) + Math.pow(mouseY - iconCenterY, 2)
+                    Math.pow(clientX - iconCenterX, 2) + Math.pow(clientY - iconCenterY, 2)
                 );
 
-                // Repel distance threshold (150px)
                 if (distance < 150) {
-                    const angle = Math.atan2(mouseY - iconCenterY, mouseX - iconCenterX);
-                    // The closer the cursor, the stronger the repulsion (max 50px offset)
+                    const angle = Math.atan2(clientY - iconCenterY, clientX - iconCenterX);
                     const force = (1 - distance / 150) * 50;
-                    
                     const moveX = -Math.cos(angle) * force;
                     const moveY = -Math.sin(angle) * force;
-                    
                     icon.style.transform = `translate(${moveX}px, ${moveY}px) scale(1)`;
                 } else {
-                    // Return to original position
                     icon.style.transform = `translate(0px, 0px) scale(1)`;
                 }
             });
+        };
+
+        heroSection.addEventListener("mousemove", (e) => handleIconRepulsion(e.clientX, e.clientY));
+        
+        // Touch Support for Hero
+        heroSection.addEventListener("touchmove", (e) => {
+            if (e.touches.length > 0) {
+                handleIconRepulsion(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        heroSection.addEventListener("mouseleave", () => {
+            icons.forEach(icon => icon.style.transform = `translate(0px, 0px) scale(1)`);
         });
 
-        // Reset all icons when mouse completely leaves the Hero
-        heroSection.addEventListener("mouseleave", () => {
-            icons.forEach(icon => {
-                icon.style.transform = `translate(0px, 0px) scale(1)`;
-            });
+        heroSection.addEventListener("touchend", () => {
+             icons.forEach(icon => icon.style.transform = `translate(0px, 0px) scale(1)`);
         });
     }
 
@@ -113,29 +133,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const parallaxCards = document.querySelectorAll(".parallax-card");
     
     parallaxCards.forEach(card => {
-        card.addEventListener("mousemove", (e) => {
+        const handleParallax = (clientX, clientY) => {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Calculate rotation amount (-10deg to 10deg)
+            const x = clientX - rect.left;
+            const y = clientY - rect.top;
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
-            const rotateX = (centerY - y) / 12; // Adjusted for smoothness
+            const rotateX = (centerY - y) / 12;
             const rotateY = (x - centerX) / 12;
-            
-            // Apply 3D transform
             card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
-            
-            // Update spotlight position via CSS variables
             card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
             card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
-        });
-        
-        card.addEventListener("mouseleave", () => {
-            // Smoothly reset on leave
+        };
+
+        const resetParallax = () => {
             card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-        });
+        };
+
+        card.addEventListener("mousemove", (e) => handleParallax(e.clientX, e.clientY));
+        card.addEventListener("mouseleave", resetParallax);
+
+        // Touch Support for Parallax
+        card.addEventListener("touchmove", (e) => {
+            if (e.touches.length > 0) {
+                handleParallax(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+        card.addEventListener("touchend", resetParallax);
     });
 
     console.log('Precise Web Solutions interactive engine started.');
