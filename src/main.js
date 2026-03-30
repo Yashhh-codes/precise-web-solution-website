@@ -28,12 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Navbar Scroll Effect ---
     const navbar = document.getElementById("navbar");
     window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            navbar?.classList.add("h-20");
-            navbar?.classList.remove("h-24");
-        } else {
-            navbar?.classList.add("h-24");
+        if (window.scrollY > 80) {
+            navbar?.classList.add("h-16");
             navbar?.classList.remove("h-20");
+            navbar?.classList.add("bg-surface/95");
+        } else {
+            navbar?.classList.add("h-20");
+            navbar?.classList.remove("h-16");
+            navbar?.classList.remove("bg-surface/95");
         }
     });
 
@@ -45,8 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleMobileMenu = () => {
         mobileMenu?.classList.toggle("active");
         if (mobileMenu?.classList.contains("active")) {
+            mobileMenu.style.opacity = "1";
+            mobileMenu.style.visibility = "visible";
             document.body.style.overflow = "hidden";
         } else {
+            mobileMenu.style.opacity = "0";
+            mobileMenu.style.visibility = "hidden";
             document.body.style.overflow = "";
         }
     };
@@ -67,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const trackHeight = rect.height;
             const viewHeight = window.innerHeight;
 
-            // Progress from 0 to 1 as we scroll through the track
             let progress = -trackTop / (trackHeight - viewHeight);
             progress = Math.max(0, Math.min(1, progress));
 
@@ -81,8 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     card.style.transform = "translateY(0) scale(1)";
                 } else {
                     card.classList.remove("active");
-                    card.style.opacity = "0.15";
-                    card.style.transform = "translateY(20px) scale(0.98)";
+                    card.style.opacity = "0.2";
+                    card.style.transform = "translateY(15px) scale(0.99)";
                 }
             });
         };
