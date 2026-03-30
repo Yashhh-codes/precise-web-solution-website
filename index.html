@@ -17,8 +17,8 @@
 <body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary overflow-x-hidden">
 
   <!-- Header / Navbar -->
-  <nav class="fixed w-full z-50 top-0 transition-all duration-500 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/10 shadow-2xl shadow-black/20" id="navbar">
-    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-24 flex items-center justify-between">
+  <nav class="fixed w-full z-50 top-0 transition-all duration-500 bg-surface/80 backdrop-blur-md border-b border-outline/10 shadow-premium" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
       <div class="text-xl font-black tracking-tighter text-on-surface uppercase font-headline cursor-pointer hover:text-primary transition-all duration-300" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
         Precise Web Solutions
       </div>
@@ -60,7 +60,7 @@
   <section id="hero-section" class="relative min-h-screen flex items-center pt-32 overflow-hidden bg-surface">
     <!-- Optimized Hero Video (Instant Load via Poster) -->
     <video autoplay muted loop playsinline poster="/hero-poster.png"
-      class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.12] z-0">
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-[0.06] z-0 mix-blend-multiply">
       <source src="/Blueprint_To_Website_Animation.mp4" type="video/mp4">
     </video>
     <!-- Interactive Floating Icons Container -->
@@ -104,7 +104,7 @@
     </div>
 
     <!-- Background Grid Pattern -->
-    <div class="absolute inset-0 grid-pattern opacity-[0.03] -z-10"></div>
+    <div class="absolute inset-0 grid-pattern -z-10"></div>
     <div class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-surface to-transparent -z-10"></div>
   </section>
 
