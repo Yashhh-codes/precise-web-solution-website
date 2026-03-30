@@ -61,44 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenuToggle?.addEventListener("click", toggleMobileMenu);
     mobileMenuClose?.addEventListener("click", toggleMobileMenu);
 
-    // --- Methodology Pinned Scroll Engine (3-Step Version) ---
-    const processSection = document.getElementById("process");
-    const methodCards = document.querySelectorAll(".method-card");
-    const track = document.querySelector(".scroll-track");
-
-    if (processSection && track && methodCards.length > 0) {
-        const handleMethodScroll = () => {
-            const rect = track.getBoundingClientRect();
-            const trackTop = rect.top;
-            const trackHeight = rect.height;
-            const viewHeight = window.innerHeight;
-
-            // Normalize progress to capture the "middle" movement more purely
-            let progress = -trackTop / (trackHeight - viewHeight);
-            progress = Math.max(0, Math.min(1, progress));
-
-            const totalSteps = methodCards.length;
-            // Use a slightly more aggressive index calculation to ensure cards trigger well
-            const activeIndex = Math.floor(progress * (totalSteps + 0.5)); 
-
-            methodCards.forEach((card, index) => {
-                if (index <= activeIndex && progress > 0.05) {
-                    card.classList.add("active");
-                    card.style.opacity = "1";
-                    card.style.transform = "translateY(0) scale(1)";
-                } else {
-                    card.classList.remove("active");
-                    card.style.opacity = "0.2";
-                    card.style.transform = "translateY(10px) scale(0.995)";
-                }
-            });
-        };
-
-        window.addEventListener("scroll", handleMethodScroll);
-        // Initial check
-        handleMethodScroll();
-    }
-
     // --- Subtle Hero Icon Motion (Less 'Busy' version) ---
     const heroIcons = document.querySelectorAll(".interactive-icon-inner");
     if (heroIcons.length > 0) {
