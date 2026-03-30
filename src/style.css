@@ -1,306 +1,136 @@
 @import "tailwindcss";
 
 @theme {
-  --color-on-tertiary: #ffffff;
-  --color-surface-container-high: #ebe7e7;
-  --color-primary-fixed: #ffdad7;
-  --color-on-secondary-fixed: #1c1b1b;
-  --color-inverse-on-surface: #f3f0ef;
-  --color-on-secondary: #ffffff;
-  --color-tertiary-fixed: #dbe2f9;
-  --color-inverse-primary: #ffb3af;
-  --color-tertiary-container: #6b7286;
-  --color-inverse-surface: #313030;
-  --color-on-error: #ffffff;
-  --color-on-primary-fixed-variant: #d6001a;
-  --color-on-tertiary-container: #f9f8ff;
-  --color-primary-fixed-dim: #ffb3af;
-  --color-on-primary-container: #fff7f6;
-  --color-on-secondary-container: #656464;
-  --color-primary: #ff3b3b;
-  --color-on-surface: #1c1b1b;
-  --color-on-background: #1c1b1b;
-  --color-surface-dim: #dcd9d9;
-  --color-on-primary-fixed: #410005;
-  --color-surface: #fcf8f8;
-  --color-secondary: #5f5e5e;
-  --color-surface-tint: #ff3b3b;
-  --color-surface-bright: #fcf8f8;
-  --color-secondary-fixed: #e5e2e1;
-  --color-on-secondary-fixed-variant: #474646;
-  --color-secondary-container: #e5e2e1;
+  /* Premium Engineering Palette - Slate, Deep Red, Crisp Neutrals */
+  --color-primary: #d6001c; /* Deep, clinical red */
+  --color-primary-container: #410005;
   --color-on-primary: #ffffff;
-  --color-surface-container: #f0edec;
-  --color-on-error-container: #93000a;
-  --color-background: #fcf8f8;
-  --color-error: #ba1a1a;
-  --color-outline: #936e6c;
-  --color-surface-container-highest: #e5e2e1;
-  --color-surface-container-lowest: #ffffff;
-  --color-secondary-fixed-dim: #c9c6c5;
-  --color-outline-variant: #e8bcb9;
-  --color-on-tertiary-fixed-variant: #404759;
-  --color-surface-variant: #e5e2e1;
-  --color-primary-container: #ff7070;
-  --color-on-surface-variant: #5e3f3d;
-  --color-error-container: #ffdad6;
-  --color-surface-container-low: #f6f3f2;
-  --color-tertiary: #535a6c;
-  --color-tertiary-fixed-dim: #bfc6dc;
-  --color-on-tertiary-fixed: #141b2c;
+  
+  --color-surface: #0a0a0a; /* Dark-first premium feel */
+  --color-on-surface: #f1f1f1;
+  --color-surface-container: #141414;
+  --color-surface-container-low: #1c1c1c;
+  --color-surface-container-high: #242424;
+  
+  --color-secondary: #94a3b8; /* Slate gray */
+  --color-on-secondary: #0f172a;
+  
+  --color-outline: #334155;
+  --color-outline-variant: #1e293b;
 
   --font-headline: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
-  --font-label: "Space Grotesk", sans-serif;
+  --font-label: "Outfit", sans-serif;
 
-  --default-border-radius: 0.125rem;
-  --radius-lg: 0.25rem;
-  --radius-xl: 0.5rem;
-  --radius-full: 0.75rem;
+  --default-border-radius: 0rem; /* Sharp, engineering aesthetic */
+  --radius-lg: 0.125rem;
+  --radius-xl: 0.25rem;
+  --radius-full: 9999px;
 }
+
 
 @layer utilities {
   .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-  }
-  .glass-nav {
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
   }
   
-  /* Mobile Menu Overlay */
-  .mobile-menu-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  /* Layout: Asymmetry & Purposeful Spacing */
+  .section-spacing {
+    padding-top: clamp(8rem, 15vw, 12rem);
+    padding-bottom: clamp(8rem, 15vw, 12rem);
+  }
+
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  .mobile-menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-  .mobile-menu-link {
-    font-family: var(--font-headline);
-    font-size: 2.5rem;
+
+  /* Typography: High-Authority Display */
+  .text-premium-display {
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
     font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
-    color: #1c1b1b;
-    transition: color 0.3s ease;
   }
-  .mobile-menu-link:hover {
-    color: var(--color-primary);
+
+  .text-premium-sub {
+    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    color: var(--color-secondary);
   }
-  
-  /* Scroll Reveal Interactivity */
+
+  /* Interactions: Grounded & Intentional */
   .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(20px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
   }
   .reveal.active {
     opacity: 1;
     transform: translateY(0);
   }
-  .reveal-delay-100 { transition-delay: 100ms; }
-  .reveal-delay-200 { transition-delay: 200ms; }
-  .reveal-delay-300 { transition-delay: 300ms; }
-  .reveal-delay-400 { transition-delay: 400ms; }
 
-  /* Glassmorphism Card Utility */
-  .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  /* Glass Effects: Subtle & Precise */
+  .glass-card-premium {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.4s ease, background 0.4s ease;
   }
-
-  /* Enhanced Scroll Reveal (Fade In/Out) */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px) scale(0.98);
-    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-    will-change: transform, opacity;
-  }
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+  .glass-card-premium:hover {
+    border-color: rgba(214, 0, 28, 0.3);
+    background: rgba(255, 255, 255, 0.04);
   }
 
-  /* Strong Card Hover Interaction */
-  .service-card {
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  .service-card:hover {
-    transform: translateY(-12px) scale(1.02);
-    border-color: rgba(255, 59, 59, 0.4);
-    box-shadow: 0 20px 40px rgba(255, 59, 59, 0.1), 0 0 20px rgba(255, 59, 59, 0.05);
-  }
-  .service-card:hover .card-image {
-    transform: scale(1.1);
-  }
-  .card-image-container {
-    height: 180px;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    border-radius: 2px;
-  }
-  .card-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-
-  /* Methodology Pinned Animation Styles */
-  .method-card.active {
-    opacity: 1 !important;
-    transform: translateY(0) scale(1.05) !important;
-    border-color: rgba(255, 59, 59, 0.4) !important;
-    background: rgba(255, 59, 59, 0.05) !important;
-    box-shadow: 0 0 40px rgba(255, 59, 59, 0.15);
-  }
-
-  .method-card.active .step-num {
-    color: rgba(255, 59, 59, 1) !important;
-    text-shadow: 0 0 20px rgba(255, 59, 59, 0.8);
-    transform: translateY(-5px);
-  }
-
-  .method-card.active .h-px {
-    background: rgba(255, 59, 59, 0.8) !important;
-    box-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
-  }
-
-  /* Mobile-first fallback: If scroll-sync is disabled or failed */
-  @media (max-width: 768px) {
-    .method-card {
-      opacity: 1 !important;
-      transform: none !important;
-      scale: 1 !important;
-    }
-  }
-
-  /* Smooth scaling for interactive components */
-  .hover-scale-img img {
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-  .hover-scale-img:hover img {
-    transform: scale(1.05);
-  }
-
-  /* Interactive Hero Icons */
-  @keyframes icon-bobbing {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(6px, -8px) rotate(5deg); }
-    50% { transform: translate(0, 0) rotate(0deg); }
-    75% { transform: translate(-6px, 8px) rotate(-5deg); }
-  }
-
-  .interactive-icon-wrapper {
-    position: absolute;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    /* Initial state before reveal */
-    opacity: 0;
-    transform: scale(0.5);
-  }
-
-  .interactive-icon-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 1.5rem;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    animation: icon-bobbing 7s ease-in-out infinite;
-    transform-origin: center center;
-  }
-
-  /* Dark mode support logic for card if user toggles */
-  @media (prefers-color-scheme: dark) {
-    .interactive-icon-inner {
-      background-color: rgba(24, 24, 27, 0.8);
-      border-color: rgba(255, 255, 255, 0.05);
-    }
-  }
-
-  /* Infinite Scrolling Tech Marquees */
+  /* Marquee Refinement */
   @keyframes scroll-left {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
-  @keyframes scroll-right {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0); }
-  }
   .animate-scroll-left {
-    animation: scroll-left 40s linear infinite;
+    animation: scroll-left 60s linear infinite;
   }
-  .animate-scroll-right {
-    animation: scroll-right 45s linear infinite;
-  }
-  /* 3D Parallax Card Effect */
-  .parallax-card {
-    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease, border-color 0.3s ease;
-    transform-style: preserve-3d;
-    will-change: transform;
-  }
-  
-  .parallax-card::before {
-    content: '';
-    position: absolute;
-    inset: -100px;
-    z-index: 0;
-    background: radial-gradient(
-      circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(255, 59, 59, 0.15) 0%,
-      transparent 50%
-    );
+
+  /* Mobile menu: Dark Premium */
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: #0a0a0a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     opacity: 0;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
-  .parallax-card:hover::before {
+  .mobile-menu-overlay.active {
     opacity: 1;
+    visibility: visible;
   }
 
-  /* Ensure content stays above the spotlight */
-  /* Strong Glassmorphism Button */
-  .glass-button-strong {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .glass-button-strong:hover {
-    background: rgba(255, 59, 59, 0.1);
-    border-color: rgba(255, 59, 59, 0.4);
-    box-shadow: 0 8px 20px rgba(255, 59, 59, 0.15);
-    transform: translateY(-2px);
+  .parallax-card {
+    transition: transform 0.1s ease-out;
+    transform-style: preserve-3d;
   }
 
-  /* Responsive Scaling for High-Impact Typography */
-  @media (max-width: 768px) {
-    .font-headline.text-9xl { font-size: 4rem; line-height: 1; }
-    .font-headline.text-8xl { font-size: 3.5rem; line-height: 1; }
-    .font-headline.text-7xl { font-size: 3rem; line-height: 1; }
+  /* Helper Classes for Engineering Aesthetics */
+  .border-sharp { border-radius: 0; }
+  .grid-pattern {
+    background-image: radial-gradient(var(--color-outline) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  /* Custom Scroll Track for Methodology */
+  .method-step.active .step-indicator {
+    background: var(--color-primary);
+    box-shadow: 0 0 20px var(--color-primary);
   }
 }
+
 
