@@ -1,31 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  /* Premium Engineering Palette - Slate, Deep Red, Crisp Neutrals */
-  --color-primary: #d6001c; /* Deep, clinical red */
-  --color-primary-container: #410005;
+  /* Premium Engineering Palette - Slate, Deep Red, Crisp Neutrals (Light Mode) */
+  --color-primary: #d6001c; /* Sharp clinical red accent */
+  --color-primary-container: #fee2e2;
   --color-on-primary: #ffffff;
   
-  --color-surface: #0a0a0a; /* Dark-first premium feel */
-  --color-on-surface: #f1f1f1;
-  --color-surface-container: #141414;
-  --color-surface-container-low: #1c1c1c;
-  --color-surface-container-high: #242424;
+  --color-surface: #f8fafc; /* Premium off-white (Slate 50) */
+  --color-on-surface: #0f172a; /* Deep Slate Navy (Slate 900) */
+  --color-surface-container: #f1f5f9; /* Subtle section shift (Slate 100) */
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container-high: #e2e8f0;
   
-  --color-secondary: #94a3b8; /* Slate gray */
-  --color-on-secondary: #0f172a;
+  --color-secondary: #64748b; /* Muted slate gray (Slate 500) */
+  --color-on-secondary: #ffffff;
   
-  --color-outline: #334155;
-  --color-outline-variant: #1e293b;
+  --color-outline: #e2e8f0; /* Soft borders (Slate 200) */
+  --color-outline-variant: #f1f5f9;
 
   --font-headline: "Inter", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-label: "Outfit", sans-serif;
 
-  --default-border-radius: 0rem; /* Sharp, engineering aesthetic */
+  --default-border-radius: 0rem; 
   --radius-lg: 0.125rem;
   --radius-xl: 0.25rem;
   --radius-full: 9999px;
+
+  /* Custom Elevation for Light Theme */
+  --shadow-premium: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
 }
 
 
@@ -73,17 +77,19 @@
     transform: translateY(0);
   }
 
-  /* Glass Effects: Subtle & Precise */
+  /* Glass Effects: Soft Light Refinement */
   .glass-card-premium {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: border-color 0.4s ease, background 0.4s ease;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(15, 23, 42, 0.05);
+    box-shadow: var(--shadow-premium);
+    transition: all 0.4s ease;
   }
   .glass-card-premium:hover {
-    border-color: rgba(214, 0, 28, 0.3);
-    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-hover);
+    background: rgba(255, 255, 255, 0.8);
   }
 
   /* Marquee Refinement */
@@ -95,12 +101,12 @@
     animation: scroll-left 60s linear infinite;
   }
 
-  /* Mobile menu: Dark Premium */
+  /* Mobile menu: Premium Light Overlay */
   .mobile-menu-overlay {
     position: fixed;
     inset: 0;
     z-index: 100;
-    background: #0a0a0a;
+    background: #f8fafc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,14 +128,15 @@
   /* Helper Classes for Engineering Aesthetics */
   .border-sharp { border-radius: 0; }
   .grid-pattern {
-    background-image: radial-gradient(var(--color-outline) 1px, transparent 0);
+    background-image: radial-gradient(#0f172a 1px, transparent 0);
     background-size: 40px 40px;
+    opacity: 0.03;
   }
 
   /* Custom Scroll Track for Methodology */
   .method-step.active .step-indicator {
     background: var(--color-primary);
-    box-shadow: 0 0 20px var(--color-primary);
+    box-shadow: 0 0 15px rgba(214, 0, 28, 0.3);
   }
 }
 
