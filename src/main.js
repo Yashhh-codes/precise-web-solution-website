@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const reveals = document.querySelectorAll(".reveal");
 
     const revealOptions = {
-        threshold: 0.25, // Higher threshold for more intentional reveal
-        rootMargin: "0px 0px -80px 0px"
+        threshold: 0.2, // Trigger at 20% visibility
+        rootMargin: "0px"
     };
 
     const revealOnScroll = new IntersectionObserver((entries) => {
