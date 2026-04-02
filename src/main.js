@@ -74,5 +74,38 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // --- Stacking Cards Animation Engine ---
+    const stackCards = document.querySelectorAll(".stack-card");
+    const stackWrappers = document.querySelectorAll(".stack-card-wrapper");
+
+    if (stackCards.length > 0) {
+        window.addEventListener("scroll", () => {
+            stackWrappers.forEach((wrapper, index) => {
+                const rect = wrapper.getBoundingClientRect();
+                const card = stackCards[index];
+                
+                // If the wrapper is above or at the sticky top (120px from top)
+                if (rect.top <= 120) {
+                    // Calculate how much we've scrolled past the sticky start point
+                    // rect.height is the scroll room we've given it
+                    const scrolledPast = 120 - rect.top;
+                    const totalScrollHeight = rect.height;
+                    const progress = Math.min(Math.max(scrolledPast / totalScrollHeight, 0), 1);
+                    
+                    // Scale down the card as we scroll past it
+                    // Base scale 1.0, scales down to ~0.93
+                    const scale = 1 - (progress * 0.07);
+                    const opacity = 1 - (progress * 0.3); // Fade slightly
+                    
+                    card.style.transform = `scale(${scale})`;
+                    card.style.opacity = `${opacity}`;
+                } else {
+                    card.style.transform = `scale(1)`;
+                    card.style.opacity = `1`;
+                }
+            });
+        });
+    }
+
     console.log('Precise Web Solutions: Premium interaction engine initialized.');
 });
