@@ -32,6 +32,16 @@
   --shadow-hover: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
 
 @layer utilities {
   .material-symbols-outlined {
@@ -40,8 +50,8 @@
   
   /* Layout: Asymmetry & Purposeful Spacing */
   .section-spacing {
-    padding-top: clamp(8rem, 15vw, 12rem);
-    padding-bottom: clamp(8rem, 15vw, 12rem);
+    padding-top: clamp(4rem, 15vw, 12rem);
+    padding-bottom: clamp(4rem, 15vw, 12rem);
   }
 
   .asymmetric-grid {
@@ -52,14 +62,14 @@
 
   /* Typography: High-Authority Display */
   .text-premium-display {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2.5rem, 8vw, 6rem);
     line-height: 0.95;
     letter-spacing: -0.04em;
     font-weight: 900;
   }
 
   .text-premium-sub {
-    font-size: clamp(1.125rem, 2vw, 1.5rem);
+    font-size: clamp(1rem, 2vw, 1.5rem);
     line-height: 1.6;
     letter-spacing: -0.01em;
     color: var(--color-secondary);
@@ -158,6 +168,7 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 2rem;
   }
   .mobile-menu-overlay.active {
     opacity: 1;

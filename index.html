@@ -43,15 +43,15 @@
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="mobile-menu-overlay">
     <button id="mobile-menu-close" class="absolute top-8 right-10 text-on-surface p-2 cursor-pointer">
-      <span class="material-symbols-outlined text-5xl font-light">close</span>
+      <span class="material-symbols-outlined text-4xl font-light">close</span>
     </button>
-    <nav class="flex flex-col items-start px-12 gap-8 w-full max-w-2xl">
-      <a class="text-5xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})">Engineering</a>
-      <a class="text-5xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('tech')?.scrollIntoView({behavior: 'smooth'})">Systems</a>
-      <a class="text-5xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})">Work</a>
-      <a class="text-5xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('how-we-build')?.scrollIntoView({behavior: 'smooth'})">Philosophy</a>
-      <button onclick="toggleMobileMenu(); document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})"
-        class="mt-12 bg-primary text-on-primary px-12 py-5 border-sharp font-label font-bold text-sm uppercase tracking-[0.3em] shadow-2xl shadow-primary/30">
+    <nav class="flex flex-col items-center text-center gap-8 w-full max-w-md">
+      <a class="text-3xl sm:text-4xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})">Engineering</a>
+      <a class="text-3xl sm:text-4xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('tech')?.scrollIntoView({behavior: 'smooth'})">Systems</a>
+      <a class="text-3xl sm:text-4xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})">Work</a>
+      <a class="text-3xl sm:text-4xl font-black tracking-tighter hover:text-primary transition-all duration-300" onclick="toggleMobileMenu(); document.getElementById('how-we-build')?.scrollIntoView({behavior: 'smooth'})">Philosophy</a>
+      <button onclick="toggleMobileMenu(); document.getElementById('direct-contact')?.scrollIntoView({behavior: 'smooth'})"
+        class="mt-12 bg-primary text-on-primary px-10 py-4 border-sharp font-label font-bold text-xs uppercase tracking-[0.3em] shadow-2xl shadow-primary/30">
         Start Your Project
       </button>
     </nav>
@@ -91,12 +91,12 @@
         <p class="text-premium-sub max-w-2xl mb-12">
           We strip away the agency fluff to build resilient, high-performance web systems designed for scalability, maintainability, and real-world results.
         </p>
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="#direct-contact" class="bg-primary text-on-primary px-10 py-5 border-sharp font-label font-bold text-[10px] uppercase tracking-[0.3em] shadow-xl shadow-primary/20 hover:brightness-110 active:scale-95 transition-all text-center">
+        <div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+          <a href="#direct-contact" class="bg-primary text-on-primary px-10 py-5 border-sharp font-label font-bold text-[10px] uppercase tracking-[0.3em] shadow-xl shadow-primary/20 hover:brightness-110 active:scale-95 transition-all text-center w-full sm:w-auto">
             Start Your Project
           </a>
           <button onclick="document.getElementById('how-we-build')?.scrollIntoView({behavior: 'smooth'})"
-            class="border-2 border-outline/30 text-on-surface hover:border-primary px-10 py-5 border-sharp font-label font-bold text-[10px] uppercase tracking-[0.3em] transition-all text-center group">
+            class="border-2 border-outline/30 text-on-surface hover:border-primary px-10 py-5 border-sharp font-label font-bold text-[10px] uppercase tracking-[0.3em] transition-all text-center w-full sm:w-auto group">
             Our Philosophy <span class="material-symbols-outlined align-middle ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </button>
         </div>
@@ -146,14 +146,14 @@
   <!-- Engineering Services (Asymmetrical) -->
   <section id="services" class="section-spacing bg-surface relative">
     <div class="max-w-7xl mx-auto px-6 sm:px-10">
-      <div class="mb-32 reveal">
+      <div class="mb-32 reveal fade-io">
         <span class="font-label text-primary font-bold text-[10px] tracking-[0.4em] uppercase block mb-6">Our Engineering Focus</span>
         <h2 class="text-premium-display">Core Capabilities</h2>
       </div>
 
-      <div class="flex flex-col gap-64">
+      <div class="flex flex-col gap-32 lg:gap-64">
         <!-- Service 1: Performance -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal fade-io">
           <div class="lg:col-span-7 aspect-video relative overflow-hidden group shadow-premium">
             <img src="/web-design.png" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700" alt="Performance Engineering">
             <div class="absolute inset-0 bg-gradient-to-t from-surface/40 via-transparent to-transparent"></div>
@@ -170,7 +170,7 @@
         </div>
 
         <!-- Service 2: Scalable Systems -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal lg:flex-row-reverse">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center reveal fade-io lg:flex-row-reverse">
           <div class="lg:col-start-1 lg:col-span-5 lg:pr-12 text-right flex flex-col items-end">
             <div class="h-px w-12 bg-primary mb-8 text-right"></div>
             <h3 class="text-4xl font-black mb-6 tracking-tighter">Scalable Infrastructure</h3>
@@ -272,46 +272,46 @@
     <!-- Strip 1: Moving Left -->
     <div class="marquee-container relative mb-8">
         <div class="marquee-content flex gap-24 py-6 animate-scroll-left whitespace-nowrap">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="React">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Node.js">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="PostgreSQL">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="TypeScript">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Python">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Tailwind CSS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Docker">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Prisma">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Redis">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Framer Motion">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="React">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Node.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="PostgreSQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="TypeScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Tailwind CSS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Docker">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Prisma">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Redis">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Framer Motion">
             
             <!-- Duplicate for seamless scroll -->
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="React">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Node.js">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="PostgreSQL">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="TypeScript">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Python">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="React">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Node.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="PostgreSQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="TypeScript">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Python">
         </div>
     </div>
 
     <!-- Strip 2: Moving Right -->
     <div class="marquee-container relative">
         <div class="marquee-content flex gap-24 py-6 animate-scroll-right whitespace-nowrap">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Next.js">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Go">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="MongoDB">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="AWS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Vite">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="GCP">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Kubernetes">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="GraphQL">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Rust">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Vercel">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Next.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Go">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="MongoDB">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="AWS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Vite">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="GCP">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Kubernetes">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="GraphQL">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Rust">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Vercel">
             
             <!-- Duplicate for seamless scroll -->
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Next.js">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Go">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="MongoDB">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="AWS">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" class="h-14 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Vite">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Next.js">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Go">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="MongoDB">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="AWS">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" class="h-14 grayscale opacity-80 lg:opacity-40 hover:grayscale-0 hover:opacity-100 transition-all" alt="Vite">
         </div>
     </div>
   </section>

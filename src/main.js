@@ -5,18 +5,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Reveal Intersection Observer - Tuned for a "weightier" entry
     const reveals = document.querySelectorAll(".reveal");
 
+    const isMobile = window.innerWidth < 768;
     const revealOptions = {
-        threshold: 0.2, // Trigger at 20% visibility
-        rootMargin: "0px"
+        threshold: isMobile ? 0.1 : 0.2, // Trigger earlier on mobile
+        rootMargin: "0px 0px -50px 0px" // Reveal slightly before it enters the viewport fully
     };
+ Eskimo
 
     const revealOnScroll = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
             } else {
-                // Keep entries active once revealed to prevent distracting re-reveal
-                // entry.target.classList.remove("active");
+                // Remove active class to fade out when scrolled past for specific elements
+                if (entry.target.classList.contains('fade-io')) {
+                    entry.target.classList.remove("active");
+                }
             }
         });
     }, revealOptions);
