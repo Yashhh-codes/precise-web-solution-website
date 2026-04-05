@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
         threshold: isMobile ? 0.1 : 0.2, // Trigger earlier on mobile
         rootMargin: "0px 0px -50px 0px" // Reveal slightly before it enters the viewport fully
     };
- Eskimo
 
     const revealOnScroll = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
